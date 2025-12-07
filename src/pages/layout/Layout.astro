@@ -1,0 +1,55 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="bg-emerald-800 text-white shadow-lg">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <a href="/" class="text-2xl font-bold hover:text-emerald-200 transition-colors">
+            🏃‍♂️ Hobbit Speedruns
+          </a>
+          <div class="flex gap-6">
+            <a href="/" class="hover:text-emerald-200 transition-colors font-semibold">
+              Home
+            </a>
+            <a href="/guides" class="hover:text-emerald-200 transition-colors font-semibold">
+              Guides
+            </a>
+            <a href="/resources" class="hover:text-emerald-200 transition-colors font-semibold">
+              Resources
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <slot />
+
+    <!-- Footer -->
+    <footer class="bg-emerald-900 text-white py-8 mt-auto">
+      <div class="container mx-auto px-4 text-center">
+        <p class="text-emerald-200">
+          © 2025 Hobbit Speedruns Community | 
+          <a href="https://github.com/ThibautRingdev/hobb" class="hover:text-white underline">
+            GitHub
+          </a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
