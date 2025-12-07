@@ -177,7 +177,7 @@ Contributions are welcome! Here's how you can help:
 ### Contribution Ideas
 
 - 📝 Write new guides or improve existing ones
-- 🐛 Report bugs or suggest features via [Issues](https://github.com/yourusername/hobbit-speedruns/issues)
+- 🐛 Report bugs or suggest features via [Issues](https://github.com/ThibautRingdev/hobbit-speedruns/issues)
 - 🎨 Improve the design or user experience
 - 🔗 Add helpful resources for the community
 
