@@ -1,57 +1,376 @@
 ---
-import Layout from '../pages/layout/Layout.astro';
+import Layout from "../layout/Layout.astro";
 ---
 
-<Layout title="Hobbit Speedruns - Home">
-  <div class="min-h-screen bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900">
-    <!-- Hero Section -->
-    <div class="container mx-auto px-4 py-20">
-      <div class="text-center text-white">
-        <h1 class="text-6xl font-bold mb-6 drop-shadow-lg">
-          🏃‍♂️ Hobbit Speedruns
-        </h1>
-        <p class="text-2xl mb-8 text-emerald-100">
-          Community hub for The Hobbit (2003) speedrunning
-        </p>
-        <div class="flex gap-4 justify-center">
-          <a 
-            href="/guides" 
-            class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all shadow-lg hover:shadow-xl"
-          >
-            View Guides
-          </a>
-          <a 
-            href="/resources" 
-            class="bg-white hover:bg-gray-100 text-emerald-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all shadow-lg hover:shadow-xl"
-          >
-            Resources
-          </a>
-        </div>
-      </div>
-    </div>
+<Layout title="Speedrun Guides - The Hobbit">
 
-    <!-- Quick Info Cards -->
-    <div class="container mx-auto px-4 py-12">
+  <!-- HERO SECTION WITH VIDEO -->
+  <section class="relative h-[70vh] overflow-hidden">
+    <iframe
+      class="absolute inset-0 w-full h-full object-cover"
+      src="https://www.youtube.com/embed/a3Ifqn1XJF8?autoplay=1&mute=1&loop=1&playlist=a3Ifqn1XJF8&controls=0&showinfo=0&modestbranding=1&rel=0"
+      title="Hobbit Speedrun Background"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 space-y-6">
+      <h1 class="text-6xl font-extrabold text-white">
+        Choose Your <span class="text-emerald-400">Category</span>
+      </h1>
+      <p class="text-xl text-white/90 max-w-2xl">
+        Master The Hobbit (2003) with detailed routes, glitches, and strategies
+      </p>
+    </div>
+  </section>
+
+  <!-- PLATFORM SELECTOR -->
+  <section class="py-12 px-8 bg-gradient-to-b from-neutral-900 to-neutral-800">
+    <div class="max-w-5xl mx-auto flex justify-center">
+      <div class="inline-flex bg-neutral-800 rounded-full p-1.5 shadow-lg border border-neutral-700">
+        <button 
+          class="platform-btn active px-8 py-3 rounded-full font-semibold transition-all"
+          data-platform="pc"
+        >
+          💻 PC
+        </button>
+        <button 
+          class="platform-btn px-8 py-3 rounded-full font-semibold transition-all"
+          data-platform="gamecube"
+        >
+          🎮 GameCube
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDS SECTION - FAN LAYOUT -->
+  <section class="py-8 pb-20 px-8 bg-gradient-to-b from-neutral-800 to-neutral-900 overflow-hidden">
+    <div class="max-w-5xl mx-auto">
+      <div class="cards-fan-container" id="cardsContainer">
+        
+        <!-- PC Cards -->
+        <div class="platform-cards active" data-platform="pc">
+          <a href="/guides/pc/any-nmg" class="card-3d" data-index="0">
+            <div class="card-inner">
+              <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&q=80" alt="Any% NMG" class="absolute inset-0 w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white space-y-1">
+                <h3 class="text-lg font-bold">Any% NMG</h3>
+                <p class="text-xs text-white/70">No Major Glitches</p>
+              </div>
+            </div>
+          </a>
+          <a href="/guides/pc/all-quest" class="card-3d" data-index="1">
+            <div class="card-inner">
+              <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&q=80" alt="All Quest" class="absolute inset-0 w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white space-y-1">
+                <h3 class="text-lg font-bold">All Quest</h3>
+                <p class="text-xs text-white/70">Complete every quest</p>
+              </div>
+            </div>
+          </a>
+          <a href="/guides/pc/glitchless" class="card-3d" data-index="2">
+            <div class="card-inner">
+              <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&q=80" alt="Glitchless" class="absolute inset-0 w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white space-y-1">
+                <h3 class="text-lg font-bold">Glitchless</h3>
+                <p class="text-xs text-white/70">Pure skill only</p>
+              </div>
+            </div>
+          </a>
+          <a href="/guides/pc/100-percent" class="card-3d" data-index="3">
+            <div class="card-inner">
+              <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600&q=80" alt="100%" class="absolute inset-0 w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white space-y-1">
+                <h3 class="text-lg font-bold">100%</h3>
+                <p class="text-xs text-white/70">Everything completed</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- GameCube Cards -->
+        <div class="platform-cards" data-platform="gamecube">
+          <a href="/guides/gc/any-nmg" class="card-3d" data-index="0">
+            <div class="card-inner">
+              <img src="https://images.unsplash.com/photo-1614294148960-9aa740632a87?w=600&q=80" alt="Any% NMG GC" class="absolute inset-0 w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white space-y-1">
+                <h3 class="text-lg font-bold">Any% NMG</h3>
+                <p class="text-xs text-white/70">No Major Glitches</p>
+              </div>
+            </div>
+          </a>
+          <a href="/guides/gc/all-quest" class="card-3d" data-index="1">
+            <div class="card-inner">
+              <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80" alt="All Quest GC" class="absolute inset-0 w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white space-y-1">
+                <h3 class="text-lg font-bold">All Quest</h3>
+                <p class="text-xs text-white/70">Complete every quest</p>
+              </div>
+            </div>
+          </a>
+          <a href="/guides/gc/glitchless" class="card-3d" data-index="2">
+            <div class="card-inner">
+              <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80" alt="Glitchless GC" class="absolute inset-0 w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white space-y-1">
+                <h3 class="text-lg font-bold">Glitchless</h3>
+                <p class="text-xs text-white/70">Pure skill only</p>
+              </div>
+            </div>
+          </a>
+          <a href="/guides/gc/100-percent" class="card-3d" data-index="3">
+            <div class="card-inner">
+              <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=600&q=80" alt="100% GC" class="absolute inset-0 w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 text-white space-y-1">
+                <h3 class="text-lg font-bold">100%</h3>
+                <p class="text-xs text-white/70">Everything completed</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES SECTION -->
+  <section class="py-16 px-8 md:px-20 bg-neutral-50">
+    <div class="max-w-6xl mx-auto space-y-8">
+      <h2 class="text-3xl font-bold text-center">Additional Resources</h2>
+      
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white hover:bg-white/20 transition-all">
-          <h3 class="text-2xl font-bold mb-3">📚 Guides</h3>
-          <p class="text-emerald-100">
-            Comprehensive tutorials and strategies for speedrunning The Hobbit
+        <div class="bg-white p-6 rounded-xl shadow space-y-3">
+          <span class="text-3xl">📚</span>
+          <h3 class="text-xl font-semibold">Wiki</h3>
+          <p class="text-neutral-600 text-sm">
+            Comprehensive documentation on mechanics, routes, and history.
           </p>
+          <a href="/wiki" class="text-emerald-600 font-semibold text-sm">
+            Browse wiki →
+          </a>
         </div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white hover:bg-white/20 transition-all">
-          <h3 class="text-2xl font-bold mb-3">🔗 Resources</h3>
-          <p class="text-emerald-100">
-            Tools, timers, and community links to help you improve your runs
+
+        <div class="bg-white p-6 rounded-xl shadow space-y-3">
+          <span class="text-3xl">🎥</span>
+          <h3 class="text-xl font-semibold">Video Tutorials</h3>
+          <p class="text-neutral-600 text-sm">
+            Watch world record runs and technique breakdowns.
           </p>
+          <a href="/videos" class="text-emerald-600 font-semibold text-sm">
+            Watch videos →
+          </a>
         </div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white hover:bg-white/20 transition-all">
-          <h3 class="text-2xl font-bold mb-3">🏆 Leaderboards</h3>
-          <p class="text-emerald-100">
-            Check out the official leaderboards on speedrun.com
+
+        <div class="bg-white p-6 rounded-xl shadow space-y-3">
+          <span class="text-3xl">💬</span>
+          <h3 class="text-xl font-semibold">Community Discord</h3>
+          <p class="text-neutral-600 text-sm">
+            Get help, share strategies, and connect with other runners.
           </p>
+          <a href="/discord" class="text-emerald-600 font-semibold text-sm">
+            Join Discord →
+          </a>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- STYLES -->
+  <style>
+    .platform-btn {
+      color: #9ca3af;
+      transition: all 0.3s ease;
+    }
+    .platform-btn.active {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    }
+
+    .platform-cards {
+      display: none;
+      position: relative;
+      height: 500px;
+    }
+    .platform-cards.active {
+      display: block;
+    }
+
+    .cards-fan-container {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1500px;
+    }
+
+    .card-3d {
+      position: absolute;
+      perspective: 1500px;
+      transition: transform 0.3s ease, z-index 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 280px;
+      height: 400px;
+      border-radius: 20px;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card-3d:hover .card-inner {
+      box-shadow: 0 25px 80px rgba(0,0,0,0.8);
+      border-color: rgba(16, 185, 129, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      .platform-cards {
+        display: none;
+      }
+      .platform-cards.active {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+        height: auto;
+      }
+      .card-3d {
+        position: relative !important;
+        transform: none !important;
+      }
+      .card-inner {
+        width: 100%;
+        height: 350px;
+      }
+    }
+  </style>
+
+  <!-- SCRIPTS -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const platformBtns = document.querySelectorAll('.platform-btn') as NodeListOf<HTMLElement>;
+    const platformCards = document.querySelectorAll('.platform-cards') as NodeListOf<HTMLElement>;
+
+    platformBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const platform = btn.dataset.platform;
+        if (!platform) return;
+
+        platformBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        platformCards.forEach(cards => cards.classList.remove('active'));
+
+        setTimeout(() => {
+          const target = document.querySelector(
+            `.platform-cards[data-platform="${platform}"]`
+          ) as HTMLElement | null;
+
+          if (!target) return;
+          target.classList.add('active');
+          positionCards();
+        }, 100);
+      });
+    });
+
+    function positionCards() {
+      if (window.innerWidth <= 768) return;
+
+      const activeCards = document.querySelector('.platform-cards.active') as HTMLElement | null;
+      if (!activeCards) return;
+
+      const cards = activeCards.querySelectorAll('.card-3d') as NodeListOf<HTMLElement>;
+      const total = cards.length;
+      const midIndex = (total - 1) / 2;
+      const maxOffsetX = 180;
+
+      cards.forEach((card, i) => {
+        const distance = i - midIndex;
+        const angle = distance * 8;
+        const offsetY = Math.abs(distance) * 25;
+        const factor = distance / midIndex;
+        const offsetX = factor * maxOffsetX;
+
+        card.style.transform = `translateX(${offsetX}px) translateY(${offsetY}px) rotate(${angle}deg)`;
+        card.style.zIndex = `${10 - Math.abs(distance)}`;
+      });
+    }
+
+    platformCards.forEach(container => {
+      const cards = container.querySelectorAll('.card-3d') as NodeListOf<HTMLElement>;
+
+      cards.forEach(card => {
+        const inner = card.querySelector('.card-inner') as HTMLElement | null;
+        if (!inner) return;
+
+        const index = parseInt(card.dataset.index ?? '0', 10);
+
+        card.addEventListener('mouseenter', () => {
+          if (window.innerWidth <= 768) return;
+
+          const total = cards.length;
+          const midIndex = (total - 1) / 2;
+          const maxOffsetX = 180;
+
+          cards.forEach((c, i) => {
+            const distance = i - index;
+            const angle = distance * 8;
+            const offsetY = Math.abs(distance) * 25;
+            const factor = distance / midIndex;
+            const offsetX = factor * maxOffsetX;
+
+            if (i === index) {
+              c.style.transform = `translateX(${offsetX}px) translateY(${offsetY - 80}px) rotate(${angle}deg) scale(1.1)`;
+              c.style.zIndex = '1000';
+            } else {
+              c.style.transform = `translateX(${offsetX}px) translateY(${offsetY}px) rotate(${angle}deg)`;
+              c.style.zIndex = '10';
+            }
+          });
+        });
+
+        card.addEventListener('mousemove', (e: MouseEvent) => {
+          if (window.innerWidth <= 768) return;
+
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = (y - centerY) / 20;
+          const rotateY = (centerX - x) / 20;
+
+          inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          inner.style.transform = 'rotateX(0) rotateY(0)';
+          positionCards();
+        });
+      });
+    });
+
+    positionCards();
+    window.addEventListener('resize', positionCards);
+  });
+</script>
+
 </Layout>

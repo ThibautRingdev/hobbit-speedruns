@@ -1,0 +1,57 @@
+---
+import Layout from '../pages/layout/Layout.astro';
+---
+
+<Layout title="Hobbit Speedruns - Home">
+  <div class="min-h-screen bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900">
+    <!-- Hero Section -->
+    <div class="container mx-auto px-4 py-20">
+      <div class="text-center text-white">
+        <h1 class="text-6xl font-bold mb-6 drop-shadow-lg">
+          🏃‍♂️ Hobbit Speedruns
+        </h1>
+        <p class="text-2xl mb-8 text-emerald-100">
+          Community hub for The Hobbit (2003) speedrunning
+        </p>
+        <div class="flex gap-4 justify-center">
+          <a 
+            href="/guides" 
+            class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all shadow-lg hover:shadow-xl"
+          >
+            View Guides
+          </a>
+          <a 
+            href="/resources" 
+            class="bg-white hover:bg-gray-100 text-emerald-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all shadow-lg hover:shadow-xl"
+          >
+            Resources
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Info Cards -->
+    <div class="container mx-auto px-4 py-12">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white hover:bg-white/20 transition-all">
+          <h3 class="text-2xl font-bold mb-3">📚 Guides</h3>
+          <p class="text-emerald-100">
+            Comprehensive tutorials and strategies for speedrunning The Hobbit
+          </p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white hover:bg-white/20 transition-all">
+          <h3 class="text-2xl font-bold mb-3">🔗 Resources</h3>
+          <p class="text-emerald-100">
+            Tools, timers, and community links to help you improve your runs
+          </p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white hover:bg-white/20 transition-all">
+          <h3 class="text-2xl font-bold mb-3">🏆 Leaderboards</h3>
+          <p class="text-emerald-100">
+            Check out the official leaderboards on speedrun.com
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
